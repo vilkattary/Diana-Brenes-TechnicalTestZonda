@@ -1,0 +1,23 @@
+{
+  "name": "tecnical-test-zonda",
+  "version": "1.0.0",
+  "description": "esto es un update para probar",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vilkattary/Tecnical-Test-Zonda.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/vilkattary/Tecnical-Test-Zonda/issues"
+  },
+  "homepage": "https://github.com/vilkattary/Tecnical-Test-Zonda#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^25.0.3"
+  }
+}

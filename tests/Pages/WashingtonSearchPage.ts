@@ -207,7 +207,7 @@ private async applyAndWaitForResultsRefresh() {
 
   await this.ensureCaptchaCleared();
 
-  // ✅ Assert correcto para UI pública
+  //  Assert correcto para UI pública
   await expect(this.resultCards.first()).toBeVisible({ timeout: 20_000 });
 }
 

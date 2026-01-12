@@ -72,41 +72,98 @@ Listing search using the location **Washington** and the category **55+ New Home
 ## Assumptions
 - Listings displayed are valid for the **55+ New Homes** category in Washington
 - The production environment may contain variable or changing data
+- Network conditions and site stability may vary
 
 ---
 
 ## Risks
 - Lack of synchronization when applying filters
-- Duplicate listings appearing in the results
+- Filters returning inconsistent or delayed results
+- Flaky behavior due to dynamic or changing listing data
+- Automation instability due to production anti-bot protections
+
+
+---
+
+## High-Level Test Types
+- Manual Testing
+    - Functional validation of search and filters
+    - Exploratory testing focused on edge cases and unexpected behavior
+
+- Automation Candidates (Automation implemented using Playwright (TypeScript))
+  - Smoke test:
+    - Basic search flow and validation of at least one listing card
+  - Filter test:
+    - Apply price range and bedrooms filter
+    - Validate results change accordingly
+
+- Data Validation
+  - Validate that listing prices fall within selected price range
+  - Validate mandatory fields (price, bedrooms, location) are present
+  - Use mock assumptions where data is unpredictable
+
+- Non-Functional (Brief)
+  - Basic usability observations
+  -  High-level accessibility checks during exploratory testing
+
+
+---
+
+## Environment & Test Data Approach
+- Environment
+  - Production (Live)
+  - Desktop browser
+  - Real production data
+
+- Test Data
+  - No predefined test data
+  - Tests rely on existing live listings
+  - Automation assertions are designed to be flexible to handle variable data
+
+
+---
+
+## Prioritization
+
+- High Priority
+  - Search functionality
+  - Filter application and results update
+  - Presence of mandatory listing data
+
+- Medium Priority
+  - Load More button behavior
+  - Combination of multiple filters
+
+- Low Priority
+  - Minor UI inconsistencies
+  - Non-blocking usability issues
 
 ---
 
 ## Timeline
-- **Day 1 (2 hours):**
-  - Requirement analysis
+
+- Day 1 (2 hours):
+  - Requirements analysis
   - Test plan and test cases preparation
-- **Day 2 (3 hours):**
-  - Functional testing execution
+
+- Day 2 (6 hour):
+  - Exploratory testing execution
+  - Automation script execution
 
 ---
 
 ## Deliverables
-- Test cases
-- Test execution reports
+
+- Test Plan
+- Test Cases
+- Automation scripts (Playwright)
+- Test execution results
+- Sample defect report
 
 ---
 
 ## Success Criteria
-- 100% pass rate on high-priority test cases
-- Zero critical defects
 
----
-
-## Environment
-- Production-like test environment
-
----
-
-## Documentation
-- Test Plan
-- Compliance and testing documentation
+- All high-priority test cases executed
+- No critical defects found
+- Automation scripts execute successfully without blocking failures
